@@ -3,3 +3,5 @@ app/logs
 vendor
 web/bundles
 src/*
+.idea
+.DS_store

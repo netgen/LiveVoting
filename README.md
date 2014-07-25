@@ -1,1 +1,1 @@
-#LiveVotingBundle
+#LiveVoting
