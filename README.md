@@ -10,8 +10,6 @@
     cd NetGen/
     git clone https://github.com/netgen/LiveVoting.git LiveVotingBundle/
     cd LiveVotingBundle/
-    # installing assets
-    php app/console assets:install --symlink
     # move to production mode
     composer install --no-dev --optimize-autoloader
     php app/console cache:clear --env=prod --no-debug
