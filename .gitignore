@@ -1,3 +1,4 @@
+app/config/parameters.yml
 app/cache
 app/logs
 vendor
@@ -5,3 +6,4 @@ web/bundles
 src/*
 .idea
 .DS_store
+composer.phar
