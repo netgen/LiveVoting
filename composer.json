@@ -7,8 +7,12 @@
         "psr-0": { "": "src/", "SymfonyStandard": "app/" }
     },
     "require": {
+	"symfony/event-dispatcher": "~2.1",
+	"symfony/http-kernel": "~2.4",
+	"symfony/http-foundation": "~2.1",
         "php": ">=5.3.3",
         "symfony/symfony": "2.5.*",
+	"symfony/security": "2.6.*@dev",
         "doctrine/orm": "~2.2,>=2.2.3",
         "doctrine/doctrine-bundle": "~1.2",
         "twig/extensions": "~1.0",
@@ -17,10 +21,18 @@
         "symfony/monolog-bundle": "~2.4",
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
-        "incenteev/composer-parameter-handler": "~2.0"
+        "incenteev/composer-parameter-handler": "~2.0",
+	"symfony/http-foundation": "2.6.*@dev"
     },
     "require-dev": {
-        "sensio/generator-bundle": "~2.3"
+        "sensio/generator-bundle": "~2.3",
+	"ircmaxell/password-compat": "1.0.*",
+	"symfony/routing": "~2.2",
+	"symfony/validator": "~2.2",
+	"doctrine/common": "~2.2",
+	"doctrine/dbal": "~2.2",
+	"psr/log": "~1.0",
+	"symfony/expression-language": "~2.4"
     },
     "scripts": {
         "post-root-package-install": [

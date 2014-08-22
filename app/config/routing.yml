@@ -2,3 +2,9 @@ live_voting:
     resource: "@LiveVotingBundle/Resources/config/routing.yml"
     prefix:   /
 
+
+login:
+    path:    /login
+    defaults: { _controller: LiveVotingBundle:Security:login }
+login_check:
+    path:    /login_check

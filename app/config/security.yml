@@ -4,8 +4,10 @@ security:
             memory:
                 users:
                     admin: { password: morskipas, roles: 'ROLE_ADMIN' }
+                    other: { password: abc, roles: 'ROLE_USER'}
 
     access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, roles: ROLE_ADMIN }
         - { path: ^/admin, roles: ROLE_ADMIN }
 
@@ -18,6 +20,10 @@ security:
             anonymous: ~
             http_basic:
                 realm: "LiveVoting admin panel"
+            form_login:
+                login_path: login
+                check_path: login_check
+    
 
         default:
             anonymous: ~
