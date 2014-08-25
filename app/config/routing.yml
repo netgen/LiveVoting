@@ -8,3 +8,6 @@ login:
     defaults: { _controller: LiveVotingBundle:Security:login }
 login_check:
     path:    /login_check
+
+admin_login_check:
+   path: /admin/login_check
