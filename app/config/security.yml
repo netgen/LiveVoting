@@ -5,36 +5,51 @@ security:
 
     providers:
         entity_provider:
-            entity: { class: LiveVotingBundle:User, property: email }
+            entity: { class: LiveVotingBundle:User }
         memory_provider:    
             memory:
                 users:
                     admin: { password: morskipas, roles: 'ROLE_ADMIN' }
-
     role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+        ROLE_ADMIN:    [ROLE_USER]
+
+    access_control:
+        admin_login:
+            path: /admin/login
+            roles: IS_AUTHENTICATED_ANONYMOUSLY
+        admin_area:
+            path: /admin/.*
+            roles: ROLE_ADMIN
+        members_login:
+            path: /user/login
+            roles: IS_AUTHENTICATED_ANONYMOUSLY
+        members_area:
+            path: /user/.*
+            roles: ROLE_USER
+        event_area:
+            path: /event/.*
+            roles: ROLE_ADMIN
+
 
     firewalls:
         admin_secured_area:
-            pattern:   ^/admin
+            pattern:   ^/admin/.*
             anonymous: ~
             provider: memory_provider
             form_login:
-                check_path: /admin/login_check
                 login_path: /admin/login
+                check_path: /admin/login_check
                 default_target_path: /admin
             logout:
-
+                path:    /admin/logout
         user_secured_area:
-            pattern:   ^/
+            pattern:   ^/user/.*
             anonymous: ~
             provider: entity_provider
             form_login:
-                login_path: login
-                check_path: login_check
+                login_path: /user/login
+                check_path: /user/login_check
+                username_parameter: _email
                 default_target_path: /home
-
-        default:
-            anonymous: ~
-  
+            logout:
+                path: /user/logout
