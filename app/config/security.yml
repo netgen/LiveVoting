@@ -4,8 +4,8 @@ security:
         Netgen\LiveVotingBundle\Entity\User: plaintext
 
     providers:
-        webservice:
-            id: webservice_user_provider
+        db_provider:
+            entity: { class: LiveVotingBundle:User }
         memory_provider:    
             memory:
                 users:
@@ -45,11 +45,10 @@ security:
         user_secured_area:
             pattern:   ^/user/.*
             anonymous: ~
-            provider: webservice
+            provider: db_provider
             form_login:
                 login_path: /user/login
                 check_path: /user/login_check
-                username_parameter: _email
-                default_target_path: /home
+                default_target_path: /user/
             logout:
                 path: /user/logout
