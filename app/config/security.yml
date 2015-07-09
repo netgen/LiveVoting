@@ -6,7 +6,7 @@ security:
     providers:
         db_provider:
             entity: { class: LiveVotingBundle:User }
-        memory_provider:    
+        memory_provider:
             memory:
                 users:
                     admin: { password: %admin_password%, roles: 'ROLE_ADMIN' }
@@ -20,9 +20,6 @@ security:
         admin_area:
             path: /admin/.*
             roles: ROLE_ADMIN
-        members_login:
-            path: /user/login
-            roles: IS_AUTHENTICATED_ANONYMOUSLY
         members_area:
             path: /user/.*
             roles: ROLE_USER
@@ -32,23 +29,26 @@ security:
 
 
     firewalls:
-        admin_secured_area:
-            pattern:   ^/admin/.*
-            anonymous: ~
-            provider: memory_provider
-            form_login:
-                login_path: /admin/login
-                check_path: /admin/login_check
-                default_target_path: /admin
-            logout:
-                path:    /admin/logout
-        user_secured_area:
-            pattern:   ^/user/.*
-            anonymous: ~
-            provider: db_provider
-            form_login:
-                login_path: /user/login
-                check_path: /user/login_check
-                default_target_path: /user/
-            logout:
-                path: /user/logout
+        admin:
+          pattern: ^/admin.*
+          anonymous: ~
+          context: livevoting
+          form_login:
+            login_path: /admin/login
+            check_path: /admin/login_check
+            default_target_path: /admin
+          logout:
+            path: /admin/logout
+          provider: memory_provider
+
+        user:
+          pattern: ^/.*
+          anonymous: ~
+          context: livevoting
+          form_login:
+            login_path: /login
+            check_path: /login_check
+            default_target_path: /user
+          logout:
+            path: /logout
+          provider: db_provider
