@@ -19,3 +19,4 @@ parameters:
     use_assetic_controller: true
 
     admin_password: ~
+    email_hash_prefix: ~
