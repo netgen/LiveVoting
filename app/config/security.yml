@@ -49,6 +49,11 @@ security:
             login_path: /login
             check_path: /login_check
             default_target_path: /user
+            remember_me: true
+          remember_me:
+            key: "%secret%"
+            lifetime: 15768000 # 6 months in seconds
+            path: /
           logout:
             path: /logout
           provider: db_provider
