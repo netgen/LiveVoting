@@ -24,8 +24,8 @@ security:
             path: /user/.*
             roles: ROLE_USER
         event_area:
-            path: /event/.*
-            roles: ROLE_ADMIN
+            path: /events/.*
+            roles: ROLE_USER
 
 
     firewalls:
