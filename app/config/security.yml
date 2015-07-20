@@ -46,9 +46,9 @@ security:
           anonymous: ~
           context: livevoting
           form_login:
-            login_path: /login
+            login_path: /checkemail
             check_path: /login_check
-            default_target_path: /user
+            default_target_path: /events
             remember_me: true
           remember_me:
             key: "%secret%"
