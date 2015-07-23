@@ -20,3 +20,4 @@ parameters:
 
     admin_password: ~
     email_hash_prefix: ~
+    joind_in_access_token: ~
