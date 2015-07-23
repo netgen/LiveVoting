@@ -23,7 +23,8 @@
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
 	"symfony/http-foundation": "2.6.*@dev",
-        "symfony/var-dumper": "^2.7"
+        "symfony/var-dumper": "^2.7",
+        "sensio/buzz-bundle": "^1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
@@ -33,7 +34,7 @@
 	"doctrine/common": "~2.2",
 	"doctrine/dbal": "~2.2",
 	"psr/log": "~1.0",
-	"symfony/expression-language": "~2.4"
+	"symfony/expression-language": "~2.6"
     },
     "scripts": {
         "post-root-package-install": [
