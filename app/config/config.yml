@@ -68,11 +68,3 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
-# Memcached Conf
-lsw_memcache:
-    session:
-        pool: default
-    pools:
-        default:
-            servers:
-              - { host: localhost, tcp_port: 11211 }
