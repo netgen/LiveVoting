@@ -24,7 +24,8 @@
         "incenteev/composer-parameter-handler": "~2.0",
 	"symfony/http-foundation": "2.6.*@dev",
         "symfony/var-dumper": "^2.7",
-        "sensio/buzz-bundle": "^1.0"
+        "sensio/buzz-bundle": "^1.0",
+        "leaseweb/memcache-bundle": "*"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
