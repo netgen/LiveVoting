@@ -33,6 +33,6 @@ assetic:
     use_controller: %use_assetic_controller%
 
 swiftmailer:
-    transport: #trasnport
-    username:  #user
-    password:  #pass
+    transport: #"%mailer_transport%"
+    username:  #"%mailer_user%"
+    password:  #"%mailer_password%"
